@@ -1,6 +1,8 @@
-helm install strimzi-cluster-operator helm-strimzi-kafka./values.yaml \
+helm install strimzi-cluster-operator ./helm-strimzi-kafka \
   --namespace strimzi \
-  --create-namespace
+  --create-namespace \
+  --values ./helm-strimzi-kafka/values.yaml
+
 
 helm repo add openebs https://openebs.github.io/charts
 helm repo update
