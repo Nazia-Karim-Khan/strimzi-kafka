@@ -1,0 +1,9 @@
+spring:
+  kafka:
+    bootstrap-servers: kafka-cluster-kafka-bootstrap.strimzi.svc.cluster.local:9092
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

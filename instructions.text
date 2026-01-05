@@ -1,0 +1,21 @@
+helm install strimzi-cluster-operator helm-strimzi-kafka./values.yaml \
+  --namespace strimzi \
+  --create-namespace
+
+helm repo add openebs https://openebs.github.io/charts
+helm repo update
+helm install openebs openebs/openebs --namespace openebs --create-namespace
+kubectl patch storageclass openebs-hostpath -p '{"metadata": {"annotations": {"storageclass.kubernetes.io/is-default-class": "true"}}}'
+
+
+kubectl apply -f kafka-persistent.yaml -n strimzi
+
+kubectl apply -f kafka-topic.yaml -n strimzi
+
+kubectl apply -f deployment-service.yaml -n spring
+
+
+Reference: https://strimzi.io/docs/operators/latest/deploying#deploying-cluster-operator-helm-chart-str , 
+https://github.com/strimzi/strimzi-kafka-operator/blob/main/examples/kafka/kafka-persistent.yaml, 
+https://strimzi.io/docs/operators/latest/deploying#deploy-tasks_str
+          
