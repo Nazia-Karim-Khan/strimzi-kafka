@@ -19,5 +19,6 @@ kubectl apply -f deployment-service.yaml -n spring
 
 Reference: https://strimzi.io/docs/operators/latest/deploying#deploying-cluster-operator-helm-chart-str , 
 https://github.com/strimzi/strimzi-kafka-operator/blob/main/examples/kafka/kafka-persistent.yaml, 
-https://strimzi.io/docs/operators/latest/deploying#deploy-tasks_str
+https://strimzi.io/docs/operators/latest/deploying#deploy-tasks_str ,
+https://strimzi.io/docs/operators/latest/overview.html#key-features_str
           
