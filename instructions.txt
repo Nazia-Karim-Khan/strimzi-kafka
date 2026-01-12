@@ -14,6 +14,9 @@ kubectl apply -f kafka-persistent.yaml -n strimzi
 
 kubectl apply -f kafka-topic.yaml -n strimzi
 
+kubectl apply -f kafka-connect.yaml -n strimzi
+
+
 kubectl apply -f deployment-service.yaml -n spring
 
 
